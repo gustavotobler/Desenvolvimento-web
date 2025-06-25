@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+
+    <form method="post" action="#GUSTAVOTOBLER">
+        Qual o seu primeiro nome?
+        <input type="text" name="primeiro_nome" value="carlos" size="10" maxlength="15">
+    </form>
+
+    <br>
+    <br>
+
+
+
+    <form method="post" action="/cgi-bin/post-query">
+
+        Inform sua senha de acesso (8 caracteres):
+
+        <input type="password" VALUE="xpto" NAME="sua_senha" SIZE="8" MAXLENGTH="8">
+    </form>
+
+    <BR>
+    <BR>
+
+    <form method="post" action="/cgi-bin/post-query">
+
+        Você não pode vizualizar nada aqui embaixo. 
+
+        <input type="hidden" NAME="nomw_oculto" VALUE="form12">
+    </form>
+
+    <BR>
+    <BR>
+
+    <form method="post" action="/cgi-bin/post-query">
+
+        Por favor, escreva aqui suas sugestões, dúvidas e críticas:<br>
+
+        <textarea name="critica" rows="3" cols="40">
+            Gostaria de obter mais informações sobre
+            este servidor. Grato.
+        </textarea>
+    </form>
+
+    
+    <BR>
+    <BR>
+
+        <form method="post" action="/cgi-bin/post-query">
+
+            Onde você pretende fazer turismo nas férias?
+            <select name="Lugares_para_ver">
+                <option>Fortaleza</option>
+                <option value="sul">Florianópolis ou Porto Alegre</option>
+                <option>Rio de Janeiro</option>
+                <option selected>Brasília</option>
+                <option value="amazonia">Manaus</option>
+            </select>
+        </form>
+    
+
+        <br>
+        <br>
+
+
+        <form method="post" action="/cgi-bin/post-query">
+
+           Que facilidades de acomodação você deseja?<br>
+            <select name="opcional" multiple size="5">
+                <option>Televisão</option>
+                <option value="casal" selected>Cama de casal</option>
+                <option>Ar condicionado</option>
+                <option>Fax</option>
+                <option selected>Moden V.34</option>
+                <option>Sauna</option>
+                <option>Lavanderia</option>
+                <option>Frigo-Bar</option>
+            </select>
+        </form>
+
+        <br>
+        <br>
+
+
+        <form action="/action_page.php">
+            <input type="checkbox" name="veículo 1" value="Bicicleta"/> Eu tenho uma bicicleta<br/>
+            <input type="checkbox" name="veículo 2" value="Carro"/> Eu tenho um carro<br/>
+            <input type="checkbox" name="veículo 1" value="Barco"/> Eu tenho um barco<br/>
+            <input type="submit" value="Salvar"/>
+        </form>
+
+        <br>
+        <br>
+
+        <form action="/action_page.php">
+            <p>Por favor selecione seu gênero:</p>
+            <input type="radio" name="gender" value="male"/> Male <br/>
+            <input type="radio" name="gender" value="female"/> Female <br/>
+            <input type="radio" name="gender" value="other"/>Other<br/>
+
+            <p>Por favor selecione sua idade:</p>
+            <input type="radio" name="age" value="30"/> 0 - 30<br/>
+            <input type="radio" name="age" value="60"/> 31 - 60<br/>
+            <input type="radio" name="age" value="100"/> 61 - 100<br/>
+
+            <input type="submit" value="Salvar"/>
+        </form>
+
+
+        <br>
+        <br>
+
+
+        <form action="/action_page.php">
+            Email: <input type="text" name="email"/><br/>
+            Pin: <input type="text" name="pin" maxlength="4"/><br/>
+            <input type="reset" value="Limpar"/>
+            <input type="submit" value="Salvar"/>
+        </form>
+
+
+</body>
+</html>
