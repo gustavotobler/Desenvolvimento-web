@@ -1,0 +1,63 @@
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: pink;
+  margin: 0;
+  padding: 0;
+}
+
+.formulario {
+  width: 750px;
+  margin: 40px auto;
+  padding: 0;
+}
+
+.bloco-titulo {
+  background-color: rgb(255, 0, 43);
+  border: 1px solid #e00909;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.linha {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.linha-unica {
+  flex-direction: column;
+}
+
+.linha input,
+.linha select {
+  flex: 1;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ca5f20;
+  border-radius: 0;
+}
+
+.linha-unica input,
+.linha-unica select {
+  width: 100%;
+}
+
+.botao {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 25px;
+  background-color: #f78b8b;
+  color: rgb(230, 22, 22);
+  font-weight: bold;
+  border: 1px solid #fc7474;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgba(82, 7, 7, 0.699);
+}

@@ -1,0 +1,38 @@
+header{
+    margin-top:-10px;
+    margin-left:-10px;
+    background-color:rgb(255, 255, 71);
+    width:1500px;
+    height:205px;
+    border: 2px solid black;
+}
+header h1{
+    font-size:20px;
+}
+.lateral{
+    background-color:rgb(171, 171, 252);
+    height:600px;
+    width:310px;
+    border: 2px solid black;
+    text-align:20px;
+    font-size:20px;
+    margin-left:-10px
+}
+.Conteudo{
+    background-color:rgb(188, 123, 134);
+    border: 2px solid black;
+    width:1400px;
+    height:600px;
+    margin-left:300px;
+    margin-top:-605px;
+    font-size:10px;
+}   
+.rodapé{
+    height:100px;
+    width:1400px;
+    background-color:green;
+    border: 2px solid black;
+    font-size:20px;
+    margin-left:-10px;
+    margin-top:-100px;
+}
