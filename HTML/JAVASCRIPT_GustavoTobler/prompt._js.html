@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery.js">
+    </script>
+    <script>
+        function myFunction(){
+            var x;
+            var idade=prompt ("Digite sua idade: ");
+            if(idade!=null) {
+                x="idade:" + idade + " anos.";
+                document.getElementById("demo").innerHTML=x;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Clique para exibir</p>
+    <button onclick="myFunction()">Clique aqui</button>
+    <p id="demo"></p>
+    <center>
+        <adress><i>Estudante - Gustavo Tobler - Tecnico em des. de sistemas </i> </adress>
+    </center>
+</body>
+</html>
