@@ -1,74 +1,61 @@
-var formEl = document.getElementById("meuForm");
+var formEl = document.getElementById("meuform");
 
-//CHAMA A FUNÇÃO CAPTURA-EVENTOS
-captura_eventos(formEl, 'submit',formValid);
+// Captura eventos
+captura_eventos(formEl, 'submit', formValid);
 
-//FUNÇÃO PARA CAPTURAR EVENTOS
-function captura_eventos(objeto, evento, funcao){
-    //TESTE addEventListener
-    if (objeto.addEventListener){
-        objeto.addEventListener(evento,funcao,true)
-    }
-    //TESTE attachEvent
-    else if(objeto.attachEvent){
-        var evento = 'on'  + evento;
-        objeto.attachEvent(evento,funcao);
+function captura_eventos(objeto, evento, funcao) {
+    if (objeto.addEventListener) {
+        objeto.addEventListener(evento, funcao, true);
+    } else if (objeto.attachEvent) {
+        objeto.attachEvent('on' + evento, funcao);
     }
 }
 
-//FUNÇÃO PARA CANCELAR EVENTOS
-function cancela_evento(evento){
-    if(event.preventDefault){
-       event.preventDefault()
-    }else{
+function cancela_evento(evento) {
+    if (evento.preventDefault) {
+        evento.preventDefault();
+    } else {
         window.event.returnValue = false;
     }
 }
 
-//FUNÇÃO QUE VERIFICA OS CAMPOS RADIO E CHECKBOX
-function verificaCampos(campo){
-    //VARIÁVEL QUE VERIFICA OS RADIOS
+function verificaCampos(campo, evento) {
     var checados = false;
-    //VERIFICA OS RADIOS
-    for(var i=0;1<campo.length; 1++){
-        if (campo[i].checked){
-            checados=true;
+    for (var i = 0; i < campo.length; i++) {
+        if (campo[i].checked) {
+            checados = true;
+            break;
         }
     }
 
-    if (!checados){
-        alert('Marque o campo' + campo[0].name);
+    if (!checados) {
+        alert('Marque o campo ' + campo[0].name);
         cancela_evento(evento);
         return false;
     }
 }
 
-function formValid(event){
-    //PEGA OS CAMPOS TEXT E SELECT
+function formValid(event) {
     var campoNome = formEl.textname.value,
-        campoCidade = formEl.cidades.value,
-        campoRadios = formEl.sexo.value,
-        campoCheckbox = formEl.rede.value;
+        campoCidade = formEl.cidades.options,
+        campoRadios = formEl.querySelectorAll('input[name="sexo"]'),
+        campoCheckbox = formEl.querySelectorAll('input[name="rede"]');
 
-        //VERIFICA CAMPO DE TEXTO
-        if(campoNome.length==0){
-            alert("O campo Nome é obrigatório");
+    if (campoNome.length == 0) {
+        alert("O campo Nome é obrigatório");
+        cancela_evento(event);
+        return false;
+    }
+
+    var cidadeSelecionada = false;
+    for (var i = 0; i < campoCidade.length; i++) {
+        if (campoCidade[i].selected && campoCidade[i].value == "") {
+            alert('Selecione uma cidade válida');
+            cancela_evento(event);
             return false;
         }
-
-        //LAÇO QUE PERCORRE TODAS AS OPÇÕES
-        for (var i=0;i<campoCidade.length; i++){
-            if(campoCidade[i].selected){
-            if(campoCidade[i].VALUE ==""){
-                alert('Selecione uma opção');
-                cancela_evento(evento);
-            }
-        }
     }
-}
 
-//CHAMA A FUNÇÃO QUE VERIFICA CAMPOS PARA O RADIO
-verificaCampos(campoRadios);
-//CHAMA A FUNÇÃO QUE VERIFICA CAMPOS PARA O CHECKBOX
-verificaCampos(campoCheckbox);
-alert
+    verificaCampos(campoRadios, event);
+    verificaCampos(campoCheckbox, event);
+}
